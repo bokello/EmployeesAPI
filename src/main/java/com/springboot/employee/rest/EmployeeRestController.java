@@ -14,18 +14,19 @@ import com.springboot.employee.service.EmployeeService;
 @RestController
 @RequestMapping("/api")
 public class EmployeeRestController {
-	
+
 	/*
 	 * inject employee DAO
 	 * expose "/employees returns the list of employees
 	 * 
 	 */
-	private EmployeeService employeeService;
-	
-	@Autowired
-	public EmployeeRestController(EmployeeService theEmployeeService) {
 		
-		employeeService = theEmployeeService;
+	private EmployeeService employeeService;
+		
+	@Autowired	
+	public EmployeeRestController(EmployeeService theEmployeeService)
+	{
+		  employeeService = theEmployeeService;
 	}
 	
 	@GetMapping("/employees")
