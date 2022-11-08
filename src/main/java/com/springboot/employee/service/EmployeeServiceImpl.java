@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 import com.springboot.employee.dao.EmployeeDAO;
 import com.springboot.employee.entity.Employee;
 
@@ -17,9 +17,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public EmployeeServiceImpl(EmployeeDAO theEmployeeDAO) {
 		employeeDAO = theEmployeeDAO;
 	}
-	
-	
-	@Override
+
+  @Override
+	@Transactional
 	public List<Employee> findAll() {
 		
 		return employeeDAO.findAll();
