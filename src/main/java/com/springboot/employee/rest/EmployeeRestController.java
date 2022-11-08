@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.employee.dao.EmployeeDAO;
 import com.springboot.employee.entity.Employee;
+import com.springboot.employee.service.EmployeeService;
 
 
 @RestController
@@ -20,19 +20,18 @@ public class EmployeeRestController {
 	 * expose "/employees returns the list of employees
 	 * 
 	 */
-		
-	private EmployeeDAO employeeDAO;
+	private EmployeeService employeeService;
 	
 	@Autowired
-	public EmployeeRestController(EmployeeDAO theEmployeeDAO)
-	{
-		employeeDAO = theEmployeeDAO;
+	public EmployeeRestController(EmployeeService theEmployeeService) {
+		
+		employeeService = theEmployeeService;
 	}
 	
 	@GetMapping("/employees")
 	public List<Employee> findAll()
 	{		
-		return employeeDAO.findAll();
+		return employeeService.findAll();
 	}
 	
 }
