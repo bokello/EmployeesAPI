@@ -64,7 +64,6 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
 	}
 
 	@Override
-	@Transactional
 	public void deleteById(int theId) {
 		// TODO Auto-generated method stub
 		
