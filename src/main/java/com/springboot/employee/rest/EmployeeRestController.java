@@ -34,6 +34,13 @@ public class EmployeeRestController {
 		employeeService = theEmployeeService;
 	}
 	
+	@RequestMapping("/")
+	public String Index() 
+	{		
+		return "Employee API Up and Running !!";		
+	}
+	
+	
 	@GetMapping("/employees")
 	public List<Employee> findAll()
 	{		
