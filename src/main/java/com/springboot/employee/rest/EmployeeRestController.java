@@ -37,7 +37,7 @@ public class EmployeeRestController {
 	@RequestMapping("/")
 	public String Index() 
 	{		
-		return "Employee API Up and Running !!";		
+		return "Employee API is Up and Running !!";		
 	}
 	
 	
